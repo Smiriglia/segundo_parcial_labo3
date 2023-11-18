@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="loader-container">
+        <span class="loader"></span>
+    </div>
+    <form id="form-datos" class="form-container" hidden>
+        <h1>Formulario Lista</h1>
+        <br>
+        <table id="table-datos" class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th id="t-head-id" scope="col">Id</th>
+              <th id="t-head-nombre" scope="col">nombre</th>
+              <th id="t-head-apellido" scope="col">apellido</th>
+              <th id="t-head-edad" scope="col">edad</th>
+              <th id="t-head-equipo" scope="col">equipo</th>
+              <th id="t-head-cantidadGoles" scope="col">cantidadGoles</th>
+              <th id="t-head-posicion" scope="col">posicion</th>
+              <th id="t-head-titulo" scope="col">titulo</th>
+              <th id="t-head-facultad" scope="col">facultad</th>
+              <th id="t-head-añoGraduacion" scope="col">añoGraduacion</th>
+              <th id="t-head-modificar" scope="col">Modificar</th>
+              <th id="t-head-eliminar" scope="col">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody id="t-user-body">
+          </tbody>
+      </table>
+      <button id="btn-mostrar-agregar" type="button" class="btn btn-success">Agregar</button>
+    </form>
+    <form id="form-agregar" class="form-container" hidden>
+      <div id="div-id" class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">id</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-id" placeholder="id" type="text" readonly>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">nombre</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-nombre" placeholder="nombre" type="text">
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">Nombre</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-apellido" placeholder="apellido" type="text">
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">Apellido</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-edad" placeholder="edad" type="text">
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">Tipo</label>
+        </div>
+        <div class="col-auto">
+          <select id="select-tipo" class="form-select">
+            <option value="futbolista">futbolista</option>
+            <option value="profesional">profesional</option>
+          </select>
+        </div>
+      </div>
+      <div id="div-equipo" class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">Equipo</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-equipo" placeholder="equipo *" type="text">
+        </div>
+      </div>
+      <div id="div-posicion" class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">posicion</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-posicion" placeholder="posicion *" type="text">
+        </div>
+      </div>
+      <div id="div-cantidadGoles" class="row g-2">
+        <div class="col-auto">
+            <label class="form-control-plaintext">Cantidad Goles</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-cantidadGoles" placeholder="cantidadGoles *" type="text">
+        </div>
+      </div>
+      <div id="div-titulo" class="row g-2" hidden>
+        <div class="col-auto">
+            <label class="form-control-plaintext">Titulo</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-titulo" placeholder="titulo *" type="text">
+        </div>
+      </div>
+      <div id="div-facultad" class="row g-2" hidden>
+        <div class="col-auto">
+            <label class="form-control-plaintext">Facultad</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-facultad" placeholder="facultad *" type="text">
+        </div>
+      </div>
+      <div id="div-añoGraduacion" class="row g-2" hidden>
+        <div class="col-auto">
+            <label class="form-control-plaintext">Año de Graduacion</label>
+        </div>
+        <div class="col-auto">
+            <input class="form-control" id="txt-añoGraduacion" placeholder="añoGraduacion *" type="text">
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-auto">
+          <button id="btn-agregar" type="button" class="btn btn-success">Agregar</button>
+        </div>
+        <div class="col-auto">
+          <button id="btn-modificar" type="button" class="btn btn-warning">Modificar</button>
+        </div>
+        <div class="col-auto">
+          <button id="btn-eliminar" type="button" class="btn btn-danger">Eliminar</button>
+        </div>
+        <div class="col-auto">
+          <button id="btn-cancelar" type="button" class="btn btn-dark">Cancelar</button>
+        </div>
+      </div>
+    </form>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type = "text/javascript" src="script.js"></script>  
+
+</body>
+</html>
